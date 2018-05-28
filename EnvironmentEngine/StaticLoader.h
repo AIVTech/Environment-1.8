@@ -7,6 +7,7 @@
 #define ASSETS_FOLDER "Assets/"
 #define MODEL_FOLDER "Models/"
 #define TEXTURES_FOLDER "Textures/"
+#define OBJ_FILE_EXTENSION ".obj"
 
 class StaticLoader
 {

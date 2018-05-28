@@ -1,26 +1,31 @@
 #pragma once
 
-#include "StaticLoader.h"
+#include "OBJFileLoader.h"
 
 class ModelManager
 {
 public:
 
-	ModelManager(StaticLoader loader) : loader(loader)
+	ModelManager(StaticLoader& loader) : loader(loader)
 	{
 		init();
 	}
 
 	Model cube;
+	Model stall;
 
 private:
 	StaticLoader loader;
+	OBJFileLoader objLoader;
 
 	void init()
 	{
 		cube = loader.loadMesh(vertices, uvs, indices);
 		cube.setTexture(loader.loadTexture("radioactiveCrate.jpg"));
 		cube.setModelID(1);
+
+		stall = objLoader.loadObjModel("stall", "stallTexture.png", loader);
+		stall.setModelID(2);
 	}
 
 	std::vector<float> vertices = {

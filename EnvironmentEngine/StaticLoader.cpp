@@ -37,34 +37,28 @@ Texture StaticLoader::loadTexture(const char* filename)
 	unsigned int textureID;
 	glGenTextures(1, &textureID);
 	glBindTexture(GL_TEXTURE_2D, textureID);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
-	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_LOD_BIAS, -2.0f);
-
+	// load image, create texture and generate mipmaps
 	int width, height, nrChannels;
-
+	stbi_set_flip_vertically_on_load(true);
 	std::string filepath = std::string(ASSETS_FOLDER);
 	filepath.append(TEXTURES_FOLDER);
 	filepath.append(filename);
-
-	unsigned char *data = stbi_load(filepath.c_str(), &width, &height, &nrChannels, 0);
+	unsigned char *data = stbi_load(filepath.c_str(), &width, &height, &nrChannels, STBI_rgb_alpha);
 	if (data)
 	{
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
 		glGenerateMipmap(GL_TEXTURE_2D);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+		glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_LOD_BIAS, -0.2f);
 	}
 	else
 	{
-		textureID = 0;
+		// Failed to Load Texture
 	}
 	stbi_image_free(data);
-	glBindTexture(GL_TEXTURE_2D, 0);
-	Texture texture = Texture(textureID);
-	if (textureID != 0) textures.push_back(texture);
-	return texture;
+	textures.push_back(textureID);
+	return textureID;
 }
 
 

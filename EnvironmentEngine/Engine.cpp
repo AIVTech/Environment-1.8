@@ -23,13 +23,16 @@ int main()
 	Entity crate = Entity(models.cube, glm::vec3(0.0f, 1.4f, -5.0f), glm::vec3(0.f, 0.f, 0.f), 1.f);
 	entities.push_back(&crate);
 
-	for (int i = 0; i < 2000; i++)
+	for (int i = 0; i < 10; i++)
 	{
-		float xPos = rand() % 5 - 5, yPos = rand() % 3 - 1, zPos = rand() % 100 - 100;
-		float scale = rand() % 1 - 0.4f;
+		float xPos = (float)(rand() % 5 - 5), yPos = (float)(rand() % 3 - 1), zPos = (float)(rand() % 100 - 50);
+		float scale = (float)(rand() % 1) - 0.4f;
 		Entity* cube = new Entity(models.cube, glm::vec3(xPos, yPos, zPos), glm::vec3(0, 0, 0), scale);
 		entities.push_back(cube);
 	}
+
+	Entity stall = Entity(models.stall, glm::vec3(10.0f, -0.4f, -20.0f), glm::vec3(0, 0, 0), 0.4f);
+	entities.push_back(&stall);
 
 	FpsCamera camera = FpsCamera(&display);
 

@@ -126,6 +126,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FpsCamera.cpp" />
     <ClCompile Include="ModelManager.h" />
+    <ClCompile Include="OBJFileLoader.cpp" />
     <ClCompile Include="StaticEntityRenderer.cpp" />
     <ClCompile Include="StaticEntityShader.cpp" />
     <ClCompile Include="StaticLoader.cpp" />
@@ -141,6 +142,7 @@
     <ClInclude Include="FpsCamera.h" />
     <ClInclude Include="GameMath.h" />
     <ClInclude Include="Model.h" />
+    <ClInclude Include="OBJFileLoader.h" />
     <ClInclude Include="ShaderBase.h" />
     <ClInclude Include="StaticEntityRenderer.h" />
     <ClInclude Include="StaticEntityShader.h" />

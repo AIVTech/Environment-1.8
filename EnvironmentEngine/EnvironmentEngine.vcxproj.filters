@@ -117,6 +117,9 @@
     <ClCompile Include="ModelManager.h">
       <Filter>Header Files\world</Filter>
     </ClCompile>
+    <ClCompile Include="OBJFileLoader.cpp">
+      <Filter>Source Files\loaders</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stb_image.h">
@@ -163,6 +166,9 @@
     </ClInclude>
     <ClInclude Include="World.h">
       <Filter>Header Files\world</Filter>
+    </ClInclude>
+    <ClInclude Include="OBJFileLoader.h">
+      <Filter>Header Files\loaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

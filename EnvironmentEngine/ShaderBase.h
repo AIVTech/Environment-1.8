@@ -76,10 +76,8 @@ public:
 
 	static unsigned int CreateShader(const char* filepath, unsigned int type)
 	{
-		// 1. retrieve the vertex/fragment source code from filePath
 		std::string shaderCode;
 		std::ifstream shaderFile;
-		// ensure ifstream objects can throw exceptions:
 		shaderFile.exceptions(std::ifstream::failbit | std::ifstream::badbit);
 		try
 		{
