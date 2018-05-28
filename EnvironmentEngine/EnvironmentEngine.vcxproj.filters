@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\engine">
+      <UniqueIdentifier>{cbd525e0-4aaa-4d2b-9517-36157affa2be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{6c053447-48e0-4345-8a94-2bfbb2b458de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{f6913057-8988-4ef3-8d9c-eb1b37ef57c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\window">
+      <UniqueIdentifier>{8e69e093-3a2a-4053-b169-e90dbebf7c57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\window">
+      <UniqueIdentifier>{2e53a887-ac3e-4f13-b673-a113df0a5d66}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\core">
+      <UniqueIdentifier>{8caabcde-f652-4f87-bb26-697ab20910a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\core">
+      <UniqueIdentifier>{cc8af734-45a4-49ef-ab86-3780afe39732}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\loaders">
+      <UniqueIdentifier>{c86e795c-4ec1-43f7-92d3-cc7194d21dad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\loaders">
+      <UniqueIdentifier>{847fad8b-5098-45f8-9174-a40c476bc69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\models">
+      <UniqueIdentifier>{ac655e28-aae1-4d93-9b6b-17e1d884c3cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\rendering">
+      <UniqueIdentifier>{7d360a33-349a-4226-8ef5-f5439a04172e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\rendering">
+      <UniqueIdentifier>{98331e94-d3bf-4c54-bc1f-5ddd99388436}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\shaders">
+      <UniqueIdentifier>{4ffdd9b2-7011-4cc4-af57-a5656b99fcb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shaders">
+      <UniqueIdentifier>{b6e6a5c1-eaf8-42bf-803e-512d7d1e5e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\entities">
+      <UniqueIdentifier>{251f9cfb-83cb-40da-88a8-7911bdbf034e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\entities">
+      <UniqueIdentifier>{e94d750b-587e-4e84-ad23-4c9da3a3ced1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\camera">
+      <UniqueIdentifier>{0fd0af01-1918-4883-82b4-61bd955da273}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\camera">
+      <UniqueIdentifier>{c4f9753e-bfe0-42cd-9e35-d0cc59c68f67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\world">
+      <UniqueIdentifier>{5af417dc-21bc-4dce-9f87-204f2a2b4cd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\world">
+      <UniqueIdentifier>{72c1457e-53f6-402e-a8b9-0da26a9f0a7e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files\engine</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\OpenGL\Includes\glad.c">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="stb_image.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="DisplayManager.cpp">
+      <Filter>Source Files\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Vao.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="Vbo.cpp">
+      <Filter>Source Files\core</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticLoader.cpp">
+      <Filter>Source Files\loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreRenderer.cpp">
+      <Filter>Source Files\rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticEntityRenderer.cpp">
+      <Filter>Source Files\rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="StaticEntityShader.cpp">
+      <Filter>Source Files\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Source Files\entities</Filter>
+    </ClCompile>
+    <ClCompile Include="FpsCamera.cpp">
+      <Filter>Source Files\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source Files\world</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelManager.h">
+      <Filter>Header Files\world</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stb_image.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="DisplayManager.h">
+      <Filter>Header Files\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Vao.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Vbo.h">
+      <Filter>Header Files\core</Filter>
+    </ClInclude>
+    <ClInclude Include="Model.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticLoader.h">
+      <Filter>Header Files\loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreRenderer.h">
+      <Filter>Header Files\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticEntityRenderer.h">
+      <Filter>Header Files\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderBase.h">
+      <Filter>Header Files\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="StaticEntityShader.h">
+      <Filter>Header Files\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files\models</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\entities</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMath.h">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="FpsCamera.h">
+      <Filter>Header Files\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Header Files\world</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vertexShader.glsl">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+    <None Include="fragmentShader.glsl">
+      <Filter>Source Files\shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
