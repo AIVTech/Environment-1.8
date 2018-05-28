@@ -1,10 +1,10 @@
 ﻿  Engine.cpp
+  ModelManager.h
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\displaymanager.cpp(44): warning C4715: 'DisplayManager::CreateDisplay': not all control paths return a value
-  2 of 1350 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+  40 of 1361 functions ( 2.9%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    14 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 glfw3.lib(context.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(context.obj)' or at 'C:\Users\FlareFlax\Desktop\Programming\C++\Environment-1.8\Release\glfw.pdb'; linking object as if no debug info
 glfw3.lib(init.obj) : warning LNK4099: PDB 'glfw.pdb' was not found with 'glfw3.lib(init.obj)' or at 'C:\Users\FlareFlax\Desktop\Programming\C++\Environment-1.8\Release\glfw.pdb'; linking object as if no debug info

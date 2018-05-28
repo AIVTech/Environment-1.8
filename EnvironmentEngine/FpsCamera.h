@@ -11,10 +11,12 @@ class FpsCamera
 public:
 	FpsCamera(DisplayManager* display);
 
-	glm::vec3 getPosition() { return this->position; }
-	float getYaw() { return this->yaw; }
-	float getPitch() { return this->pitch; }
-	float getRoll() { return this->roll; }
+	glm::vec3& getPosition() { return this->position; }
+	float& getYaw() { return this->yaw; }
+	float& getPitch() { return this->pitch; }
+	float& getRoll() { return this->roll; }
+
+	glm::vec3& getFrontVector();
 
 	void update();
 

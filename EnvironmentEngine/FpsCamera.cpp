@@ -52,3 +52,13 @@ void FpsCamera::processMouseInput()
 		pitch = -89.0f;
 }
 
+glm::vec3& FpsCamera::getFrontVector()
+{
+	glm::vec3 front;
+	front.x = cos(glm::radians(yaw)) * cos(glm::radians(pitch));
+	front.y = sin(glm::radians(pitch));
+	front.z = sin(glm::radians(yaw)) * cos(glm::radians(pitch));
+	front = glm::normalize(front);
+	return front;
+}
+

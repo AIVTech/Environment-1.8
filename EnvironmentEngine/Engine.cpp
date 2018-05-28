@@ -20,13 +20,13 @@ int main()
 	ModelManager models(loader);
 	std::vector<Entity*> entities;
 
-	Entity crate = Entity(models.cube, glm::vec3(0.0f, 1.4f, -5.0f), glm::vec3(0.f, 0.f, 0.f), 1.f);
+	Entity crate = Entity(models.cube, glm::vec3(0.0f, 1.4f, -5.0f), glm::vec3(0.f, 0.f, 0.f), 0.4f);
 	entities.push_back(&crate);
 
-	for (int i = 0; i < 10; i++)
+	for (int i = 0; i < 100; i++)
 	{
-		float xPos = (float)(rand() % 5 - 5), yPos = (float)(rand() % 3 - 1), zPos = (float)(rand() % 100 - 50);
-		float scale = (float)(rand() % 1) - 0.4f;
+		float xPos = (float)(rand() % 5 - 5), yPos = (float)(rand() % 3 - 1), zPos = (float)(rand() % 200 - 100);
+		float scale = 0.4f;
 		Entity* cube = new Entity(models.cube, glm::vec3(xPos, yPos, zPos), glm::vec3(0, 0, 0), scale);
 		entities.push_back(cube);
 	}

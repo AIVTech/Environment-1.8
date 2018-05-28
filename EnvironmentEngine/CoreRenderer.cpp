@@ -21,13 +21,18 @@ void CoreRenderer::renderScene(std::vector<Entity*>& entities, FpsCamera& camera
 {
 	for (Entity* entity : entities)
 	{
-		processEntity(entity);
+		processEntity(entity, camera);
 	}
 	render(camera);
 }
 
-void CoreRenderer::processEntity(Entity* entity)
+void CoreRenderer::processEntity(Entity* entity, FpsCamera& camera)
 {
+	if (!shouldRenderEntity(*entity, camera))
+	{
+		return;
+	}
+
 	int id = entity->getModel().getModelID();
 	if (entityHashMap.find(id) != entityHashMap.end()) 
 	{
@@ -77,5 +82,45 @@ void CoreRenderer::createProjectionMatrix()
 	projectionMatrix[2][3] = -1;
 	projectionMatrix[3][2] = -((2 * near_plane * far_plane) / frustum_length);
 	projectionMatrix[3][3] = 0;
+}
+
+bool CoreRenderer::shouldRenderEntity(Entity& entity, FpsCamera& camera)
+{
+	if (!isEntityInRange(entity, camera))
+	{
+		return false;
+	}
+	if (!isEntityInFrustum(entity, camera))
+	{
+		return false;
+	}
+	return true;
+}
+
+bool CoreRenderer::isEntityInFrustum(Entity& entity, FpsCamera& camera)
+{
+	glm::vec3 cameraPos = camera.getPosition();
+	glm::vec3 cameraFront = camera.getFrontVector();
+
+	glm::vec3 entityPos = entity.getPosition();
+	entityPos.x = entityPos.x - cameraPos.x;
+	entityPos.y = entityPos.y - cameraPos.y;
+	entityPos.z = entityPos.z - cameraPos.z;
+
+	float numerator = (cameraFront.x * entityPos.x) + (cameraFront.y * entityPos.y) + (cameraFront.z * entityPos.z);
+	float denominator = glm::sqrt((cameraFront.x * cameraFront.x) + (cameraFront.y * cameraFront.y) + (cameraFront.z * cameraFront.z)) * 
+		glm::sqrt((entityPos.x * entityPos.x) + (entityPos.y * entityPos.y) + (entityPos.z * entityPos.z));
+
+	float scalar = numerator / denominator;
+	if (glm::abs(scalar) <= 0.76f)	// for FOV of 60.0f, this value is good, objects will stop rendering once they are completely off the screen
+	{
+		return true;
+	}
+	return false;
+}
+
+bool CoreRenderer::isEntityInRange(Entity& entity, FpsCamera& camera)
+{
+	return glm::distance(entity.getPosition(), camera.getPosition()) < farViewDistance;
 }
 
