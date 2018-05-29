@@ -1,9 +1,10 @@
 #include "CoreRenderer.h"
 
-CoreRenderer::CoreRenderer() : staticEntityRenderer(glm::mat4(1.0), staticEntityShader)
+CoreRenderer::CoreRenderer() : staticEntityRenderer(glm::mat4(1.0f), staticEntityShader), terrainRenderer(glm::mat4(1.0f), terrainShader)
 {
 	createProjectionMatrix();
 	staticEntityRenderer = StaticEntityRenderer(projectionMatrix, staticEntityShader);
+	terrainRenderer = TerrainRenderer(projectionMatrix, terrainShader);
 	glEnable(GL_DEPTH_TEST);
 }
 
@@ -17,13 +18,13 @@ void CoreRenderer::prepare()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void CoreRenderer::renderScene(std::vector<Entity*>& entities, FpsCamera& camera)
+void CoreRenderer::renderScene(std::vector<Entity*>& entities, std::vector<Terrain*>& terrains, FpsCamera& camera)
 {
 	for (Entity* entity : entities)
 	{
 		processEntity(entity, camera);
 	}
-	render(camera);
+	render(camera, terrains);
 }
 
 void CoreRenderer::processEntity(Entity* entity, FpsCamera& camera)
@@ -50,7 +51,7 @@ void CoreRenderer::processEntity(Entity* entity, FpsCamera& camera)
 	}
 }
 
-void CoreRenderer::render(FpsCamera& camera)
+void CoreRenderer::render(FpsCamera& camera, std::vector<Terrain*>& terrains)
 {
 	prepare();
 	staticEntityShader.start();
@@ -58,12 +59,18 @@ void CoreRenderer::render(FpsCamera& camera)
 	staticEntityRenderer.render(entityHashMap);
 	staticEntityShader.stop();
 
+	terrainShader.start();
+	terrainShader.loadViewMatrix(camera);
+	terrainRenderer.render(terrains);
+	terrainShader.stop();
+
 	entityHashMap.clear();
 }
 
 void CoreRenderer::cleanUp()
 {
 	staticEntityRenderer.cleanUp();
+	terrainRenderer.cleanUp();
 }
 
 void CoreRenderer::createProjectionMatrix()

@@ -3,6 +3,7 @@
 FpsCamera::FpsCamera(DisplayManager* display)
 {
 	this->display = display;
+	this->yaw -= 180;
 }
 
 void FpsCamera::update()

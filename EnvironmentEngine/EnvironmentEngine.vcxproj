@@ -131,6 +131,9 @@
     <ClCompile Include="StaticEntityShader.cpp" />
     <ClCompile Include="StaticLoader.cpp" />
     <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="Terrain.cpp" />
+    <ClCompile Include="TerrainRenderer.cpp" />
+    <ClCompile Include="TerrainShader.cpp" />
     <ClCompile Include="Vao.cpp" />
     <ClCompile Include="Vbo.cpp" />
     <ClCompile Include="World.cpp" />
@@ -148,6 +151,9 @@
     <ClInclude Include="StaticEntityShader.h" />
     <ClInclude Include="StaticLoader.h" />
     <ClInclude Include="stb_image.h" />
+    <ClInclude Include="Terrain.h" />
+    <ClInclude Include="TerrainRenderer.h" />
+    <ClInclude Include="TerrainShader.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Vao.h" />
     <ClInclude Include="Vbo.h" />
@@ -155,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="fragmentShader.glsl" />
+    <None Include="terrainFragmentShader.glsl" />
+    <None Include="terrainVertexShader.glsl" />
     <None Include="vertexShader.glsl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

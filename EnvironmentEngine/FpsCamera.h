@@ -26,7 +26,7 @@ private:
 	void processKeyboardInput();
 	void processMouseInput();
 
-	glm::vec3 position = glm::vec3(0, 1, 0);
+	glm::vec3 position = glm::vec3(100, 2, 100);
 	float yaw, pitch, roll;
 
 	// movement variables

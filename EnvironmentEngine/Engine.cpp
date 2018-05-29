@@ -19,20 +19,18 @@ int main()
 	CoreRenderer renderer;
 	ModelManager models(loader);
 	std::vector<Entity*> entities;
+	std::vector<Terrain*> terrains;
 
-	Entity crate = Entity(models.cube, glm::vec3(0.0f, 1.4f, -5.0f), glm::vec3(0.f, 0.f, 0.f), 0.4f);
+	Entity crate = Entity(models.cube, glm::vec3(110.0f, 0.5f, 105.0f), glm::vec3(0.f, 0.f, 0.f), 0.4f);
 	entities.push_back(&crate);
 
-	for (int i = 0; i < 100; i++)
-	{
-		float xPos = (float)(rand() % 5 - 5), yPos = (float)(rand() % 3 - 1), zPos = (float)(rand() % 200 - 100);
-		float scale = 0.4f;
-		Entity* cube = new Entity(models.cube, glm::vec3(xPos, yPos, zPos), glm::vec3(0, 0, 0), scale);
-		entities.push_back(cube);
-	}
-
-	Entity stall = Entity(models.stall, glm::vec3(10.0f, -0.4f, -20.0f), glm::vec3(0, 0, 0), 0.4f);
+	Entity stall = Entity(models.stall, glm::vec3(120.0f, 0.0f, 120.0f), glm::vec3(0, 0, 0), 0.5f);
 	entities.push_back(&stall);
+
+	Terrain terrain = Terrain(0, 0, loader.loadTexture("darkGrass.jpg"), loader);
+	Terrain terrain2 = Terrain(1, 0, loader.loadTexture("darkGrass.jpg"), loader);
+	terrains.push_back(&terrain);
+	terrains.push_back(&terrain2);
 
 	FpsCamera camera = FpsCamera(&display);
 
@@ -42,7 +40,7 @@ int main()
 		camera.update();
 
 		// rendering
-		renderer.renderScene(entities, camera);
+		renderer.renderScene(entities, terrains, camera);
 
 		// update display
 		ProcessInput(display.GetWindow());

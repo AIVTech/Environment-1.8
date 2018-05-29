@@ -52,9 +52,6 @@
     <Filter Include="Header Files\shaders">
       <UniqueIdentifier>{4ffdd9b2-7011-4cc4-af57-a5656b99fcb4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\shaders">
-      <UniqueIdentifier>{b6e6a5c1-eaf8-42bf-803e-512d7d1e5e67}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\entities">
       <UniqueIdentifier>{251f9cfb-83cb-40da-88a8-7911bdbf034e}</UniqueIdentifier>
     </Filter>
@@ -72,6 +69,18 @@
     </Filter>
     <Filter Include="Source Files\world">
       <UniqueIdentifier>{72c1457e-53f6-402e-a8b9-0da26a9f0a7e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\terrain">
+      <UniqueIdentifier>{22c5a9c8-b0ed-4d57-8b82-de67f211b55e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\terrain">
+      <UniqueIdentifier>{b6732f3f-89ee-4de4-81a8-3984a86c4102}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shaders">
+      <UniqueIdentifier>{b6e6a5c1-eaf8-42bf-803e-512d7d1e5e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\shaders\sources">
+      <UniqueIdentifier>{0f3a0431-6b7f-4460-8831-84a1c9b7df6f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +128,15 @@
     </ClCompile>
     <ClCompile Include="OBJFileLoader.cpp">
       <Filter>Source Files\loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Source Files\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainShader.cpp">
+      <Filter>Source Files\shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainRenderer.cpp">
+      <Filter>Source Files\rendering</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,13 +188,28 @@
     <ClInclude Include="OBJFileLoader.h">
       <Filter>Header Files\loaders</Filter>
     </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Header Files\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainShader.h">
+      <Filter>Header Files\shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainRenderer.h">
+      <Filter>Header Files\rendering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="vertexShader.glsl">
-      <Filter>Source Files\shaders</Filter>
-    </None>
     <None Include="fragmentShader.glsl">
-      <Filter>Source Files\shaders</Filter>
+      <Filter>Source Files\shaders\sources</Filter>
+    </None>
+    <None Include="vertexShader.glsl">
+      <Filter>Source Files\shaders\sources</Filter>
+    </None>
+    <None Include="terrainVertexShader.glsl">
+      <Filter>Source Files\shaders\sources</Filter>
+    </None>
+    <None Include="terrainFragmentShader.glsl">
+      <Filter>Source Files\shaders\sources</Filter>
     </None>
   </ItemGroup>
 </Project>

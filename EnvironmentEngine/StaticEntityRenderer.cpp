@@ -37,7 +37,7 @@ void StaticEntityRenderer::prepareModel(Model& model)
 
 void StaticEntityRenderer::prepareInstance(Entity& entity)
 {
-	glm::mat4 transformation = GameMath::createTransformationMatrix(entity);
+	glm::mat4 transformation = GameMath::createTransformationMatrix(entity.getPosition(), entity.getRotation(), entity.getScale());
 	shader.loadTransformationMatrix(transformation);
 }
 

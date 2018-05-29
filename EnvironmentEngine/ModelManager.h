@@ -20,6 +20,7 @@ private:
 
 	void init()
 	{
+		
 		cube = loader.loadMesh(vertices, uvs, indices);
 		cube.setTexture(loader.loadTexture("radioactiveCrate.jpg"));
 		cube.setModelID(1);
