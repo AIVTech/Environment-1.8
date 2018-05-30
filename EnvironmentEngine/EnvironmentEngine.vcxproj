@@ -139,6 +139,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AABB.h" />
     <ClInclude Include="CoreRenderer.h" />
     <ClInclude Include="DisplayManager.h" />
     <ClInclude Include="Entity.h" />

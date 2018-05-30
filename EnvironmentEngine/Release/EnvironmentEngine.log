@@ -1,9 +1,15 @@
-﻿  Engine.cpp
+﻿  CoreRenderer.cpp
+  Engine.cpp
+  Entity.cpp
   ModelManager.h
-  World.cpp
+  OBJFileLoader.cpp
+  StaticEntityRenderer.cpp
+  StaticLoader.cpp
+  Terrain.cpp
+  TerrainRenderer.cpp
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  0 of 1444 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
+  0 of 1445 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

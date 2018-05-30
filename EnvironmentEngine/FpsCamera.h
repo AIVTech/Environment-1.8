@@ -16,7 +16,9 @@ public:
 	float& getPitch() { return this->pitch; }
 	float& getRoll() { return this->roll; }
 
-	glm::vec3& getFrontVector();
+	void setPosition(glm::vec3& position) { this->position = position; }
+
+	glm::vec3 getFrontVector();
 
 	void update();
 

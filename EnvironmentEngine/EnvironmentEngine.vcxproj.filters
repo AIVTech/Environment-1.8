@@ -82,6 +82,12 @@
     <Filter Include="Source Files\shaders\sources">
       <UniqueIdentifier>{0f3a0431-6b7f-4460-8831-84a1c9b7df6f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\collision detection">
+      <UniqueIdentifier>{7bfbb726-462b-4e11-9529-340e62269595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\collision detection">
+      <UniqueIdentifier>{a0ae8aa1-e5b2-464f-addb-a8ff5588c8e4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -196,6 +202,9 @@
     </ClInclude>
     <ClInclude Include="TerrainRenderer.h">
       <Filter>Header Files\rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="AABB.h">
+      <Filter>Header Files\collision detection</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

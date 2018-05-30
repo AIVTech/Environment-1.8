@@ -31,6 +31,10 @@ Model OBJFileLoader::loadObjModel(const char* modelPath, const char* texturePath
 	std::vector<float> out_normals;
 	std::vector<int> indices;
 
+	float xMin = 0, xMax = 0;
+	float yMin = 0, yMax = 0;
+	float zMin = 0, zMax = 0;
+
 	bool firstTimeAllocation = true;
 
 	try
@@ -52,6 +56,15 @@ Model OBJFileLoader::loadObjModel(const char* modelPath, const char* texturePath
 				vertex.y = std::stof(tokens.at(2));
 				vertex.z = std::stof(tokens.at(3));
 				vertices.push_back(vertex);
+
+				if (vertex.x < xMin) xMin = vertex.x;
+				if (vertex.x > xMax) xMax = vertex.x;
+				
+				if (vertex.y < yMin) yMin = vertex.y;
+				if (vertex.y > yMax) yMax = vertex.y;
+
+				if (vertex.z < zMin) zMin = vertex.z;
+				if (vertex.z > zMax) zMax = vertex.z;
 			}
 
 			if (line.find("vt ") != std::string::npos)
@@ -113,7 +126,18 @@ Model OBJFileLoader::loadObjModel(const char* modelPath, const char* texturePath
 	// convert normals array to a vector
 	out_uvs.insert(out_uvs.end(), &normalsArray[0], &normalsArray[vertices.size() * 3]);
 
+	AABB* boundingBox = new AABB;
+	boundingBox->xMin = xMin;
+	boundingBox->xMax = xMax;
+
+	boundingBox->yMin = yMin;
+	boundingBox->yMax = yMax;
+
+	boundingBox->zMin = zMin;
+	boundingBox->zMax = zMax;
+
 	Model model = loader.loadMesh(out_vertices, out_uvs, indices);
+	model.setBoundingBox(boundingBox);
 	Texture texture = loader.loadTexture(texturePath);
 	model.setTexture(texture);
 

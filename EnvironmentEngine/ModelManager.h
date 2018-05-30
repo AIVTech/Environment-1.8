@@ -20,9 +20,11 @@ private:
 
 	void init()
 	{
-		// ID for each model must be unique to the model and set by hand (until entity editor/creator is made)
-		cube = loader.loadMesh(vertices, uvs, indices);
-		cube.setTexture(loader.loadTexture("radioactiveCrate.jpg"));
+		// ID for each model must be unique to the model and set by hand (until entity editor/creator is made)		[ ***IMPORTANT*** ]
+
+		//cube = loader.loadMesh(vertices, uvs, indices);
+		//cube.setTexture(loader.loadTexture("radioactiveCrate.jpg"));
+		cube = objLoader.loadObjModel("cube", "radioactiveCrate.jpg", loader);
 		cube.setModelID(1);
 
 		stall = objLoader.loadObjModel("stall", "stallTexture.png", loader);
