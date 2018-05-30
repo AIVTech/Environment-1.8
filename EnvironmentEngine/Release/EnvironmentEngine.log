@@ -1,8 +1,9 @@
 ﻿  Engine.cpp
+  ModelManager.h
+  World.cpp
 LINK : warning LNK4098: defaultlib 'MSVCRTD' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\displaymanager.cpp(44): warning C4715: 'DisplayManager::CreateDisplay': not all control paths return a value
-  2 of 1447 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+  0 of 1444 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code

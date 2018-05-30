@@ -6,7 +6,7 @@
 #include "DisplayManager.h"
 #include "StaticLoader.h"
 #include "CoreRenderer.h"
-#include "ModelManager.h"
+#include "World.h"
 
 void ProcessInput(GLFWwindow* window);
 
@@ -17,20 +17,7 @@ int main()
 
 	StaticLoader loader;
 	CoreRenderer renderer;
-	ModelManager models(loader);
-	std::vector<Entity*> entities;
-	std::vector<Terrain*> terrains;
-
-	Entity crate = Entity(models.cube, glm::vec3(110.0f, 0.5f, 105.0f), glm::vec3(0.f, 0.f, 0.f), 0.4f);
-	entities.push_back(&crate);
-
-	Entity stall = Entity(models.stall, glm::vec3(120.0f, 0.0f, 120.0f), glm::vec3(0, 0, 0), 0.5f);
-	entities.push_back(&stall);
-
-	Terrain terrain = Terrain(0, 0, loader.loadTexture("darkGrass.jpg"), loader);
-	Terrain terrain2 = Terrain(1, 0, loader.loadTexture("darkGrass.jpg"), loader);
-	terrains.push_back(&terrain);
-	terrains.push_back(&terrain2);
+	World world(loader);
 
 	FpsCamera camera = FpsCamera(&display);
 
@@ -40,7 +27,7 @@ int main()
 		camera.update();
 
 		// rendering
-		renderer.renderScene(entities, terrains, camera);
+		renderer.renderScene(world.getEntities(), world.getTerrains(), camera);
 
 		// update display
 		ProcessInput(display.GetWindow());
