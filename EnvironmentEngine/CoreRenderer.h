@@ -3,6 +3,7 @@
 #include "StaticEntityRenderer.h"
 #include "TerrainRenderer.h"
 #include "DisplayManager.h"
+#include "CollisionDetectionManager.h"
 
 class CoreRenderer
 {
@@ -37,5 +38,6 @@ private:
 	bool shouldRenderEntity(Entity& entity, FpsCamera& camera);
 	bool isEntityInFrustum(Entity& entity, FpsCamera& camera);
 	bool isEntityInRange(Entity& entity, FpsCamera& camera);
+	//void performCollisionDetection(Entity& entity);			<---------- MAIN METHOD FOR COLLISION DETECTION, BUT FIRST I HAVE TO MAKE A PLAYER CLASS
 };
 

@@ -120,6 +120,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\..\OpenGL\Includes\glad.c" />
+    <ClCompile Include="CollisionDetectionManager.cpp" />
     <ClCompile Include="CoreRenderer.cpp" />
     <ClCompile Include="DisplayManager.cpp" />
     <ClCompile Include="Engine.cpp" />
@@ -140,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AABB.h" />
+    <ClInclude Include="CollisionDetectionManager.h" />
     <ClInclude Include="CoreRenderer.h" />
     <ClInclude Include="DisplayManager.h" />
     <ClInclude Include="Entity.h" />

@@ -144,6 +144,9 @@
     <ClCompile Include="TerrainRenderer.cpp">
       <Filter>Source Files\rendering</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionDetectionManager.cpp">
+      <Filter>Source Files\collision detection</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stb_image.h">
@@ -204,6 +207,9 @@
       <Filter>Header Files\rendering</Filter>
     </ClInclude>
     <ClInclude Include="AABB.h">
+      <Filter>Header Files\collision detection</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetectionManager.h">
       <Filter>Header Files\collision detection</Filter>
     </ClInclude>
   </ItemGroup>
