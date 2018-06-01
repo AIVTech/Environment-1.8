@@ -1,4 +1,4 @@
-#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
+//#pragma comment(linker, "/SUBSYSTEM:windows /ENTRY:mainCRTStartup")
 #include <glad\glad.h>
 #include <GLFW\glfw3.h>
 
@@ -7,19 +7,23 @@
 #include "StaticLoader.h"
 #include "CoreRenderer.h"
 #include "World.h"
+#include "Player.h"
 
 void ProcessInput(GLFWwindow* window);
 
 int main()
 {
 	DisplayManager display;
-	display.CreateDisplay(1920, 1080, "Environment 1.8", false);
+	display.CreateDisplay(800, 600, "Environment 1.8", false);
 
 	StaticLoader loader;
 	CoreRenderer renderer;
 	World world(loader);
 
-	FpsCamera camera = FpsCamera(&display);
+	Player* player = new Player(world.getModels().cube, glm::vec3(100, 0.5f, 105), glm::vec3(0, 0, 0), 1);
+	world.getEntities().push_back(player);
+
+	FpsCamera camera = FpsCamera(player, &display);
 
 	while (!display.WindowShouldClose())
 	{
@@ -27,7 +31,7 @@ int main()
 		camera.update();
 
 		// rendering
-		renderer.renderScene(world.getEntities(), world.getTerrains(), camera);
+		renderer.renderScene(world.getEntities(), world.getTerrains(), camera, *player);
 
 		// update display
 		ProcessInput(display.GetWindow());

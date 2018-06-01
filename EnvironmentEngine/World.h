@@ -13,6 +13,8 @@ public:
 	std::vector<Entity*>& getEntities() { return entities; }
 	std::vector<Terrain*>& getTerrains() { return terrains; }
 
+	ModelManager& getModels() { return this->models; }
+
 	~World();
 
 private:

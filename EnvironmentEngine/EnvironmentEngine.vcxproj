@@ -149,6 +149,7 @@
     <ClInclude Include="GameMath.h" />
     <ClInclude Include="Model.h" />
     <ClInclude Include="OBJFileLoader.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="ShaderBase.h" />
     <ClInclude Include="StaticEntityRenderer.h" />
     <ClInclude Include="StaticEntityShader.h" />

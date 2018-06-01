@@ -1,5 +1,4 @@
 c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\vc141.pdb
-c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\glad.obj
 c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\world.obj
 c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\vbo.obj
 c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\vao.obj
@@ -17,6 +16,8 @@ c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\rel
 c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\engine.obj
 c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\displaymanager.obj
 c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\corerenderer.obj
+c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\collisiondetectionmanager.obj
+c:\users\flareflax\desktop\programming\c++\environment-1.8\environmentengine\release\glad.obj
 c:\users\flareflax\desktop\programming\c++\environment-1.8\release\environmentengine.ipdb
 c:\users\flareflax\desktop\programming\c++\environment-1.8\release\environmentengine.iobj
 c:\users\flareflax\desktop\programming\c++\environment-1.8\release\environmentengine.exe

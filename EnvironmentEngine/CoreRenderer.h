@@ -11,7 +11,7 @@ public:
 	CoreRenderer();
 
 	void prepare();
-	void renderScene(std::vector<Entity*>& entities, std::vector<Terrain*>& terrains, FpsCamera& camera);
+	void renderScene(std::vector<Entity*>& entities, std::vector<Terrain*>& terrains, FpsCamera& camera, Player& player);
 	void cleanUp();
 
 	~CoreRenderer();
@@ -22,6 +22,8 @@ private:
 
 	TerrainRenderer terrainRenderer;
 	TerrainShader terrainShader;
+
+	CollisionDetectionManager collisionDetector;
 
 	std::map<int, std::vector<Entity*>> entityHashMap;
 	void processEntity(Entity* entity, FpsCamera& camera);
@@ -38,6 +40,6 @@ private:
 	bool shouldRenderEntity(Entity& entity, FpsCamera& camera);
 	bool isEntityInFrustum(Entity& entity, FpsCamera& camera);
 	bool isEntityInRange(Entity& entity, FpsCamera& camera);
-	//void performCollisionDetection(Entity& entity);			<---------- MAIN METHOD FOR COLLISION DETECTION, BUT FIRST I HAVE TO MAKE A PLAYER CLASS
+	void performPlayerCollisionDetection(Player& player, Entity& entity);
 };
 

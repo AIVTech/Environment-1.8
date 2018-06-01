@@ -126,18 +126,16 @@ Model OBJFileLoader::loadObjModel(const char* modelPath, const char* texturePath
 	// convert normals array to a vector
 	out_uvs.insert(out_uvs.end(), &normalsArray[0], &normalsArray[vertices.size() * 3]);
 
-	AABB* boundingBox = new AABB;
-	boundingBox->xMin = xMin;
-	boundingBox->xMax = xMax;
-
-	boundingBox->yMin = yMin;
-	boundingBox->yMax = yMax;
-
-	boundingBox->zMin = zMin;
-	boundingBox->zMax = zMax;
-
 	Model model = loader.loadMesh(out_vertices, out_uvs, indices);
-	model.setBoundingBox(boundingBox);
+	model.xMax = xMax;
+	model.xMin = xMin;
+
+	model.yMax = yMax;
+	model.yMin = yMin;
+
+	model.zMax = zMax;
+	model.zMin = zMin;
+
 	Texture texture = loader.loadTexture(texturePath);
 	model.setTexture(texture);
 

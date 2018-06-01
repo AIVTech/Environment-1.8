@@ -212,6 +212,9 @@
     <ClInclude Include="CollisionDetectionManager.h">
       <Filter>Header Files\collision detection</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="fragmentShader.glsl">

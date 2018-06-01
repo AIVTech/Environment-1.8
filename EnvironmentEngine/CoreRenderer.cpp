@@ -18,11 +18,15 @@ void CoreRenderer::prepare()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void CoreRenderer::renderScene(std::vector<Entity*>& entities, std::vector<Terrain*>& terrains, FpsCamera& camera)
+void CoreRenderer::renderScene(std::vector<Entity*>& entities, std::vector<Terrain*>& terrains, FpsCamera& camera, Player& player)
 {
 	for (Entity* entity : entities)
 	{
 		processEntity(entity, camera);
+		if (entity != &player)
+		{
+			performPlayerCollisionDetection(player, *entity);
+		}
 	}
 	render(camera, terrains);
 }
@@ -129,5 +133,36 @@ bool CoreRenderer::isEntityInFrustum(Entity& entity, FpsCamera& camera)
 bool CoreRenderer::isEntityInRange(Entity& entity, FpsCamera& camera)
 {
 	return glm::distance(entity.getPosition(), camera.getPosition()) < farViewDistance;
+}
+
+void CoreRenderer::performPlayerCollisionDetection(Player& player, Entity& entity)
+{
+	if (collisionDetector.colliding(&player.getBoundingBox(), &entity.getBoundingBox()))
+	{
+		glm::vec3 diff = player.getBoundingBox().getCenterPosition() - entity.getBoundingBox().getCenterPosition();
+		if (diff.y > 0)
+		{
+			player.getPosition().y = 1.5f;
+			return;
+		}
+
+		if (diff.x > 0)
+		{
+			entity.increasePosition(-0.02f, 0, 0);
+		}
+		else if (diff.x < 0)
+		{
+			entity.increasePosition(0.02f, 0, 0);
+		}
+
+		if (diff.z > 0)
+		{
+			entity.increasePosition(0, 0, -0.02f);
+		}
+		else if (diff.z < 0)
+		{
+			entity.increasePosition(0, 0, 0.02f);
+		}
+	}
 }
 
